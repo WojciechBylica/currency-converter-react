@@ -6,7 +6,7 @@ import Form from "./Form";
 import Label from "./Label";
 import LabelWithInput from "./LabelWithInput";
 import DivButtons from "./DivButtons";
-import LabelShowOrSetCurrencys from "./LabelShowOrSetCurrencys";
+import FormShowOrSetCurrencys from "./FormShowOrSetCurrencys";
 import Results from "./Results";
 
 function App() {
@@ -28,7 +28,11 @@ function App() {
       value: 0.2,
     },
   ];
+  const [hideRates, setHideRates] = useState(true);
 
+  const toggleHideRates = () => {
+    setHideRates(hideRates => !hideRates);
+  };
 
   return (
     <>
@@ -39,20 +43,22 @@ function App() {
             <>
               <Label title="Wybierz walutę do przeliczenia:" currencys={currencys} />
               <Label title="Wybierz walutę do przeliczenia:" currencys={currencys} />
+              <LabelWithInput />
             </>
           }
-        >
-        </Form>
-        <Form
-          label={<LabelWithInput />}
-          divButtons={<DivButtons />}
+          divButtons={<DivButtons
+            hideRates={hideRates}
+            toggleHideRates={toggleHideRates} />}
         >
         </Form>
         <Results />
-        <Form
-          label={<LabelShowOrSetCurrencys currencys={currencys} />}
-        >
-        </Form>
+
+        <FormShowOrSetCurrencys
+          currencys={currencys}
+          hideRates={hideRates}
+          toggleHideRates={toggleHideRates}
+        />
+
       </Main>
       <Footer />
     </>
