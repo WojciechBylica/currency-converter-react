@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./style.css";
-import Results from "../Results";
+import Results from "./Results";
 
 
 const Form = ({ currencys, divButtons }) => {
@@ -73,10 +73,11 @@ const Form = ({ currencys, divButtons }) => {
                     </label>
                 </fieldset>
                 {divButtons}
-            </form>
-            <Results
+                <Results
                 result={result}
                 amount={amount} />
+            </form>
+            
         </>
     );
 };
