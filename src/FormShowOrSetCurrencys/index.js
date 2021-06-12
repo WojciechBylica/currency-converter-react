@@ -1,24 +1,30 @@
-const FormShowOrSetCurrencys = ({ currencys, hideRates, }) => (
-    <>
-        <form className={` ${hideRates === true ? "form__currency--hidden" : ""}`}>
-            <fieldset className="form__fieldset">
-                <legend>Kursy walut</legend>
-                <label>
-                    {currencys[1].name}
-                    <input type="number" className="form__field" min="0.01" step="0.01" value={currencys[1].value} />
-                </label>
-                <label>
-                    {currencys[2].name}
-                    <input type="number" className="form__field" min="0.01" step="0.01" value={currencys[2].value} />
-                </label>
-                <label>
-                    {currencys[3].name}
-                    <input type="number" className="form__field" min="0.01" step="0.01" value={currencys[3].value} />
-                </label>
-            </fieldset>
-        </form>
-    </>
-);
+const FormShowOrSetCurrencys = ({ currencys, hideRates, }) => {
+
+    return (
+        <>
+            <form
+                className={` ${hideRates === true ? "form__currency--hidden" : ""}`}>
+                <fieldset className="form__fieldset">
+                    <legend>Kursy walut</legend>
+                    {currencys.slice(1).map(currency =>
+                        <label>
+                            {currency.name}
+                            <input
+                                id={currencys.id+1}
+                                type="number"
+                                className="form__field"
+                                min="0.01"
+                                step="0.01"
+                                defaultValue={currency.value}
+                                readOnly={true}
+                            />
+                        </label>
+                    )}
+                </fieldset>
+            </form>
+        </>
+    );
+};
 
 export default FormShowOrSetCurrencys;
 

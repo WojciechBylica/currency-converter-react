@@ -3,14 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
 import Form from "./Form";
-import Label from "./Label";
-import LabelWithInput from "./LabelWithInput";
 import DivButtons from "./DivButtons";
 import FormShowOrSetCurrencys from "./FormShowOrSetCurrencys";
 
 
 function App() {
-  const currencys = [
+  const [currencys, setCurrencys] = useState([
     {
       id: "PLN",
       name: "PLN",
@@ -31,7 +29,8 @@ function App() {
       name: "RUB",
       value: 0.2,
     },
-  ];
+  ]);
+
   const [hideRates, setHideRates] = useState(true);
 
   const toggleHideRates = () => {
@@ -43,19 +42,19 @@ function App() {
       <Header title="Przelicznik walut" />
       <Main>
         <Form
-        currencys={currencys}
+          currencys={currencys}
           divButtons={<DivButtons
             hideRates={hideRates}
             toggleHideRates={toggleHideRates} />}
         >
         </Form>
-        
-
         <FormShowOrSetCurrencys
           currencys={currencys}
           hideRates={hideRates}
+          setCurrencys={setCurrencys}
           toggleHideRates={toggleHideRates}
-        />
+        >
+        </FormShowOrSetCurrencys>
 
       </Main>
       <Footer />

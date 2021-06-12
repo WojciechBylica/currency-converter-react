@@ -9,7 +9,7 @@ const DivButtons = ({ hideRates, toggleHideRates }) => {
                     type="button"
                     className="form__button"
                 >
-                    {`${hideRates === true ? "Edytuj" : "Ukryj"}`} Kursy
+                    {`${hideRates === true ? "Pokaż" : "Ukryj"}`} Kursy
                 </button>
             </p>
         </div>
