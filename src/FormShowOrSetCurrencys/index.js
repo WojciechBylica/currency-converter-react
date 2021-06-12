@@ -1,6 +1,6 @@
 const FormShowOrSetCurrencys = ({ currencys, hideRates, }) => (
     <>
-        <form className={` ${hideRates == true ? "form__currency--hidden" : ""}`}>
+        <form className={` ${hideRates === true ? "form__currency--hidden" : ""}`}>
             <fieldset className="form__fieldset">
                 <legend>Kursy walut</legend>
                 <label>

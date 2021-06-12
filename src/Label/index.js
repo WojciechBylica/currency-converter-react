@@ -1,16 +1,51 @@
-const Label = ({ currencys, title }) => {
+// import { useState } from "react";
 
-    return (
-        < label >
-            {title}
-            <select name="currencyFrom" className="form__field form__field--background" required>
-                <option value={currencys[0].name}>{currencys[0].name}</option>
-                <option value={currencys[1].name}>{currencys[1].name}</option>
-                <option value={currencys[2].name}>{currencys[2].name}</option>
-                <option value={currencys[3].name}>{currencys[3].name}</option>
-            </select>
-        </label >
-    )
-};
+// const Label = ({ currencys, title }) => {
 
-export default Label;
+//     const [currencyFrom, setCurrencyFrom] = useState();
+//     const onSelectCurrencyFrom = ({ target }) => {
+//         setCurrencyFrom()
+//         console.log(currencyFrom)
+//     }
+
+
+//     const [currencyTo, setCurrencyTo] = useState();
+//     const onSelectCurrencyTo = ({ target }) => setCurrencyTo(target.value)
+
+//     return (
+//         <>
+//             < label >
+//                 {title}
+//                 <select
+//                     value={currencyFrom}
+//                     onChange={onSelectCurrencyFrom}
+//                     name="currencyFrom"
+//                     className="form__field form__field--background"
+//                     required
+//                 >
+//                     <option>PLN</option>
+//                     <option>EUR</option>
+//                     <option>{currencys[2].name}</option>
+//                     <option>{currencys[3].name}</option>
+//                 </select>
+//             </label >
+//             < label >
+//                 {title}
+//                 <select
+//                     value={currencyTo}
+//                     onChange={onSelectCurrencyTo}
+//                     name="currencyTo"
+//                     className="form__field form__field--background"
+//                     required
+//                 >
+//                     <option>{currencys[0].name}</option>
+//                     <option>{currencys[1].name}</option>
+//                     <option>{currencys[2].name}</option>
+//                     <option>{currencys[3].name}</option>
+//                 </select>
+//             </label >
+//         </>
+//     )
+// };
+
+// export default Label;

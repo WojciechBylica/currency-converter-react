@@ -7,23 +7,27 @@ import Label from "./Label";
 import LabelWithInput from "./LabelWithInput";
 import DivButtons from "./DivButtons";
 import FormShowOrSetCurrencys from "./FormShowOrSetCurrencys";
-import Results from "./Results";
+
 
 function App() {
   const currencys = [
     {
+      id: "PLN",
       name: "PLN",
       value: 1,
     },
     {
+      id: "EUR",
       name: "EUR",
       value: 4.45,
     },
     {
+      id: "USD",
       name: "USD",
       value: 4.2,
     },
     {
+      id: "RUB",
       name: "RUB",
       value: 0.2,
     },
@@ -39,19 +43,13 @@ function App() {
       <Header title="Przelicznik walut" />
       <Main>
         <Form
-          label={
-            <>
-              <Label title="Wybierz walutę do przeliczenia:" currencys={currencys} />
-              <Label title="Wybierz walutę do przeliczenia:" currencys={currencys} />
-              <LabelWithInput />
-            </>
-          }
+        currencys={currencys}
           divButtons={<DivButtons
             hideRates={hideRates}
             toggleHideRates={toggleHideRates} />}
         >
         </Form>
-        <Results />
+        
 
         <FormShowOrSetCurrencys
           currencys={currencys}
