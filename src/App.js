@@ -4,11 +4,11 @@ import Footer from "./Footer";
 import Main from "./Main";
 import Form from "./Form";
 import DivButtons from "./DivButtons";
-import FormShowOrSetCurrencys from "./FormShowOrSetCurrencys";
+import FormShowOrSetCurrencies from "./FormShowOrSetCurrencies";
 
 
 function App() {
-  const [currencys, setCurrencys] = useState([
+  const [currencies, setCurrencies] = useState([
     {
       id: "PLN",
       name: "PLN",
@@ -31,30 +31,42 @@ function App() {
     },
   ]);
 
+  const changeRate = (id, target) => {
+    console.log("test")
+    setCurrencies(currencies => currencies.map(currency => {
+      if (currency.id === id) {
+        return { ...currency, value: target.value };
+      }
+
+      return currency;
+
+    }));
+  };
+
   const [hideRates, setHideRates] = useState(true);
 
   const toggleHideRates = () => {
     setHideRates(hideRates => !hideRates);
   };
 
+
   return (
     <>
       <Header title="Przelicznik walut" />
       <Main>
         <Form
-          currencys={currencys}
-          divButtons={<DivButtons
-            hideRates={hideRates}
-            toggleHideRates={toggleHideRates} />}
+          currencies={currencies}
+          divButtons={<DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />}
         >
         </Form>
-        <FormShowOrSetCurrencys
-          currencys={currencys}
+        <FormShowOrSetCurrencies
+          changeRate={changeRate}
+          currencies={currencies}
           hideRates={hideRates}
-          setCurrencys={setCurrencys}
+          // setCurrencies={setCurrencies}
           toggleHideRates={toggleHideRates}
         >
-        </FormShowOrSetCurrencys>
+        </FormShowOrSetCurrencies>
 
       </Main>
       <Footer />
