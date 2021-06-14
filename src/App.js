@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import Form from "./Form";
 import DivButtons from "./DivButtons";
-import FormShowOrSetCurrencies from "./FormShowOrSetCurrencies";
+// import FormShowOrSetCurrencies from "./FormShowOrSetCurrencies";
 
 
 function App() {
@@ -55,18 +55,22 @@ function App() {
       <Header title="Przelicznik walut" />
       <Main>
         <Form
+          setNewCurrencyValue={setNewCurrencyValue}
+          toggleCurrencyValue={toggleCurrencyValue}
+          hideRates={hideRates}
+          toggleHideRates={toggleHideRates}
           currencies={currencies}
           divButtons={<DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />}
         >
         </Form>
-        <FormShowOrSetCurrencies
+        {/* <FormShowOrSetCurrencies
           setNewCurrencyValue={setNewCurrencyValue}
           toggleCurrencyValue={toggleCurrencyValue}
           currencies={currencies}
           hideRates={hideRates}
           toggleHideRates={toggleHideRates}
         >
-        </FormShowOrSetCurrencies>
+        </FormShowOrSetCurrencies> */}
 
       </Main>
       <Footer />
