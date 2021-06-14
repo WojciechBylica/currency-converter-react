@@ -8,8 +8,8 @@ import DivButtons from "./DivButtons";
 const Form = ({ currencies, toggleHideRates, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
 
     const [amount, setAmount] = useState("");
-    const [currencyFrom, setCurrencyFrom] = useState("PLN");
-    const [currencyTo, setCurrencyTo] = useState("EUR");
+    const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
+    const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
     const [result, setResult] = useState();
 
     const calculateResult = (amount, valueFrom, valueTo) => +amount * +valueFrom / +valueTo;
