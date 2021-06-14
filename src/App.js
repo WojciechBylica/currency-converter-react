@@ -64,7 +64,6 @@ function App() {
           toggleCurrencyValue={toggleCurrencyValue}
           currencies={currencies}
           hideRates={hideRates}
-          // setCurrencies={setCurrencies}
           toggleHideRates={toggleHideRates}
         >
         </FormShowOrSetCurrencies>
