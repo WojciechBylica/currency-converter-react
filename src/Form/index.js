@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import "./style.css";
 import Results from "./Results";
-import Fieldset from "../Fieldset";
+import Fieldset from "./Fieldset";
+import DivButtons from "./DivButtons";
 
 
-const Form = ({ currencies, divButtons, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
+const Form = ({ currencies, toggleHideRates, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
 
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
@@ -74,7 +75,7 @@ const Form = ({ currencies, divButtons, hideRates, setNewCurrencyValue, toggleCu
                         />
                     </label>
                 </Fieldset>
-                {divButtons}
+                <DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates}/>
                 <Results
                     result={result}
                     amount={amount} />

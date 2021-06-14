@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import Header from "./Header";
-import Footer from "./Footer";
 import Main from "./Main";
 import Form from "./Form";
-import DivButtons from "./DivButtons";
-// import FormShowOrSetCurrencies from "./FormShowOrSetCurrencies";
-
+import Footer from "./Footer";
 
 function App() {
   const [currencies, setCurrencies] = useState([
@@ -49,7 +46,6 @@ function App() {
     setHideRates(hideRates => !hideRates);
   };
 
-
   return (
     <>
       <Header title="Przelicznik walut" />
@@ -60,18 +56,8 @@ function App() {
           hideRates={hideRates}
           toggleHideRates={toggleHideRates}
           currencies={currencies}
-          divButtons={<DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />}
         >
         </Form>
-        {/* <FormShowOrSetCurrencies
-          setNewCurrencyValue={setNewCurrencyValue}
-          toggleCurrencyValue={toggleCurrencyValue}
-          currencies={currencies}
-          hideRates={hideRates}
-          toggleHideRates={toggleHideRates}
-        >
-        </FormShowOrSetCurrencies> */}
-
       </Main>
       <Footer />
     </>
