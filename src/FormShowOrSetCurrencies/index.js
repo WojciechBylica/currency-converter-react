@@ -1,18 +1,27 @@
+import { useState } from "react";
 import Fieldset from "../Fieldset"
-const FormShowOrSetCurrencies = ({ currencies, hideRates, changeRate }) => {
+const FormShowOrSetCurrencies = ({ currencies, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
+
+    
+
+    const onFormInput = (event) => {
+        setNewCurrencyValue(event.target.value)
+        // console.log(newCurrencyValue)
+    }
 
     return (
         <>
             <form
+                onInput={onFormInput}
                 className={` ${hideRates === true ? "form__currency--hidden" : ""}`}>
-                <Fieldset>
-                    <legend>Kursy walut</legend>
+                <Fieldset legend="Kursy walut">
+
                     {currencies.slice(1).map(currency =>
                         <label>
                             {currency.name}
                             <input
-                                onInput={changeRate}
-                                id={currency.name}
+                                onInput={() => toggleCurrencyValue(currency.id)}
+                                key={currency.id}
                                 type="number"
                                 className="form__field"
                                 min="0.01"

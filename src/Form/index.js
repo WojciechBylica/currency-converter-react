@@ -9,7 +9,7 @@ const Form = ({ currencies, divButtons, }) => {
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
     const [currencyTo, setCurrencyTo] = useState("EUR");
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState();
 
     const calculateResult = (amount, valueFrom, valueTo) => amount * valueFrom / valueTo;
 

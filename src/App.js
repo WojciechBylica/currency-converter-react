@@ -31,15 +31,15 @@ function App() {
     },
   ]);
 
-  const changeRate = (id, target) => {
-    console.log("test")
+  const [newCurrencyValue, setNewCurrencyValue] = useState();
+
+  const toggleCurrencyValue = (id) => {
     setCurrencies(currencies => currencies.map(currency => {
       if (currency.id === id) {
-        return { ...currency, value: target.value };
+        return { ...currency, value: newCurrencyValue };
       }
 
       return currency;
-
     }));
   };
 
@@ -60,7 +60,8 @@ function App() {
         >
         </Form>
         <FormShowOrSetCurrencies
-          changeRate={changeRate}
+          setNewCurrencyValue={setNewCurrencyValue}
+          toggleCurrencyValue={toggleCurrencyValue}
           currencies={currencies}
           hideRates={hideRates}
           // setCurrencies={setCurrencies}
