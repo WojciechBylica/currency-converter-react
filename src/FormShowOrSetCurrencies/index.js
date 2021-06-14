@@ -1,12 +1,8 @@
-import { useState } from "react";
 import Fieldset from "../Fieldset"
 const FormShowOrSetCurrencies = ({ currencies, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
 
-    
-
     const onFormInput = (event) => {
         setNewCurrencyValue(event.target.value)
-        // console.log(newCurrencyValue)
     }
 
     return (
