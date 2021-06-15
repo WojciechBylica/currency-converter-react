@@ -29,38 +29,38 @@ const Form = ({ toggleHideRates, hideRates }) => {
         <>
             <form className="form" onSubmit={onFormSubmit}>
                 <fieldset className="form__fieldSet">
-                        < label >
-                            Wybierz walutę do przeliczenia:
+                    < label >
+                        Wybierz walutę do przeliczenia:
                             <select
-                                value={currencyFrom}
-                                onChange={({ target }) => setCurrencyFrom(target.value)}
-                                name="currencyFrom"
-                                className="form__field form__field--background"
-                                required
-                            >
-                                {currencies.map(currency => (
-                                    <option key={currency.id}>
-                                        {currency.name}
-                                    </option>
-                                ))}
-                            </select>
-                        </label >
-                        < label >
-                            Wybierz walutę do przeliczenia:
+                            value={currencyFrom}
+                            onChange={({ target }) => setCurrencyFrom(target.value)}
+                            name="currencyFrom"
+                            className="form__field form__field--background"
+                            required
+                        >
+                            {currencies.map(currency => (
+                                <option key={currency.id}>
+                                    {currency.name}
+                                </option>
+                            ))}
+                        </select>
+                    </label >
+                    < label >
+                        Wybierz walutę do przeliczenia:
                             <select
-                                value={currencyTo}
-                                onChange={({ target }) => setCurrencyTo(target.value)}
-                                name="currencyTo"
-                                className="form__field form__field--background"
-                                required
-                            >
-                                {currencies.map(currency => (
-                                    <option key={currency.id}>
-                                        {currency.name}
-                                    </option>
-                                ))}
-                            </select>
-                        </label >
+                            value={currencyTo}
+                            onChange={({ target }) => setCurrencyTo(target.value)}
+                            name="currencyTo"
+                            className="form__field form__field--background"
+                            required
+                        >
+                            {currencies.map(currency => (
+                                <option key={currency.id}>
+                                    {currency.name}
+                                </option>
+                            ))}
+                        </select>
+                    </label >
                     <label>Wpisz kwotę
                     <input
                             value={amount}
@@ -95,7 +95,6 @@ const Form = ({ toggleHideRates, hideRates }) => {
                     )}
                 </fieldset>
             </form>
-
         </>
     );
 };
