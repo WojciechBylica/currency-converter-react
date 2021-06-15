@@ -5,28 +5,6 @@ import Form from "./Form";
 import Footer from "./Footer";
 
 function App() {
-  const currencies = [
-    {
-      id: "PLN",
-      name: "PLN",
-      value: 1,
-    },
-    {
-      id: "EUR",
-      name: "EUR",
-      value: 4.45,
-    },
-    {
-      id: "USD",
-      name: "USD",
-      value: 4.2,
-    },
-    {
-      id: "RUB",
-      name: "RUB",
-      value: 0.2,
-    },
-  ];
 
   const [hideRates, setHideRates] = useState(true);
 
@@ -41,7 +19,6 @@ function App() {
         <Form
           hideRates={hideRates}
           toggleHideRates={toggleHideRates}
-          currencies={currencies}
         >
         </Form>
       </Main>

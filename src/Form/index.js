@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import "./style.css";
 import Results from "./Results";
-import Fieldset from "./Fieldset";
 import DivButtons from "./DivButtons";
+import currencies from "../Currencies";
 
 
-const Form = ({ currencies, toggleHideRates, hideRates }) => {
+const Form = ({ toggleHideRates, hideRates }) => {
 
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
@@ -28,10 +28,9 @@ const Form = ({ currencies, toggleHideRates, hideRates }) => {
     return (
         <>
             <form className="form" onSubmit={onFormSubmit}>
-                <Fieldset>
-                    <>
+                <fieldset className="form__fieldSet">
                         < label >
-                            "Wybierz walutę do przeliczenia:"
+                            Wybierz walutę do przeliczenia:
                             <select
                                 value={currencyFrom}
                                 onChange={({ target }) => setCurrencyFrom(target.value)}
@@ -47,8 +46,8 @@ const Form = ({ currencies, toggleHideRates, hideRates }) => {
                             </select>
                         </label >
                         < label >
-                            "Wybierz walutę do przeliczenia:"
-                        <select
+                            Wybierz walutę do przeliczenia:
+                            <select
                                 value={currencyTo}
                                 onChange={({ target }) => setCurrencyTo(target.value)}
                                 name="currencyTo"
@@ -62,7 +61,6 @@ const Form = ({ currencies, toggleHideRates, hideRates }) => {
                                 ))}
                             </select>
                         </label >
-                    </>
                     <label>Wpisz kwotę
                     <input
                             value={amount}
@@ -74,7 +72,7 @@ const Form = ({ currencies, toggleHideRates, hideRates }) => {
                             step="0.01"
                         />
                     </label>
-                </Fieldset>
+                </fieldset>
                 <DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />
                 <Results
                     result={result}
