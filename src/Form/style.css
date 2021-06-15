@@ -24,7 +24,7 @@
 }
 
 .form__button {
-    margin: 0px 2px;
+    margin: 0;
     background-color: #efb9b9;
     width: 100%;
     border: 1px solid grey;
@@ -62,6 +62,5 @@
 
 .form__display {
     display: flex;
-    justify-content: space-around;
-    
+    margin: 10px 0;
 }

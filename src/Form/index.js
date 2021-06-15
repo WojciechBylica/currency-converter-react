@@ -28,7 +28,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
     return (
         <>
             <form className="form" onSubmit={onFormSubmit}>
-                <fieldset className="form__fieldSet">
+                <fieldset className="form__fieldset">
                     < label >
                         Wybierz walutę do przeliczenia:
                             <select
@@ -40,7 +40,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
                         >
                             {currencies.map(currency => (
                                 <option key={currency.id}>
-                                    {currency.name}
+                                    {currency.id}
                                 </option>
                             ))}
                         </select>
