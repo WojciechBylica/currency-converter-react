@@ -46,7 +46,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
                         </select>
                     </label >
                     < label >
-                        Wybierz walutę do przeliczenia:
+                        Wybierz walutę docelową:
                             <select
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}
@@ -61,7 +61,8 @@ const Form = ({ toggleHideRates, hideRates }) => {
                             ))}
                         </select>
                     </label >
-                    <label>Wpisz kwotę
+                    <label>
+                        Wpisz kwotę:
                     <input
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
