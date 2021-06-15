@@ -13,6 +13,6 @@ body {
   padding: 10px;
   background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Money-2180330_1920.jpg/1024px-Money-2180330_1920.jpg");
   background-repeat: no-repeat;
+  background-position: top;
   font-size: 16px;
-  align-items: center;
 }
