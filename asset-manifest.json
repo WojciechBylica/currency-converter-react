@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/currency-conventer-react/static/css/main.41ed50e2.chunk.css",
-    "main.js": "/currency-conventer-react/static/js/main.d5a60569.chunk.js",
-    "main.js.map": "/currency-conventer-react/static/js/main.d5a60569.chunk.js.map",
+    "main.css": "/currency-conventer-react/static/css/main.daa6931d.chunk.css",
+    "main.js": "/currency-conventer-react/static/js/main.4a9f78fc.chunk.js",
+    "main.js.map": "/currency-conventer-react/static/js/main.4a9f78fc.chunk.js.map",
     "runtime-main.js": "/currency-conventer-react/static/js/runtime-main.7e810fef.js",
     "runtime-main.js.map": "/currency-conventer-react/static/js/runtime-main.7e810fef.js.map",
     "static/js/2.463868c8.chunk.js": "/currency-conventer-react/static/js/2.463868c8.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.127c7192.chunk.js": "/currency-conventer-react/static/js/3.127c7192.chunk.js",
     "static/js/3.127c7192.chunk.js.map": "/currency-conventer-react/static/js/3.127c7192.chunk.js.map",
     "index.html": "/currency-conventer-react/index.html",
-    "static/css/main.41ed50e2.chunk.css.map": "/currency-conventer-react/static/css/main.41ed50e2.chunk.css.map",
+    "static/css/main.daa6931d.chunk.css.map": "/currency-conventer-react/static/css/main.daa6931d.chunk.css.map",
     "static/js/2.463868c8.chunk.js.LICENSE.txt": "/currency-conventer-react/static/js/2.463868c8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7e810fef.js",
     "static/js/2.463868c8.chunk.js",
-    "static/css/main.41ed50e2.chunk.css",
-    "static/js/main.d5a60569.chunk.js"
+    "static/css/main.daa6931d.chunk.css",
+    "static/js/main.4a9f78fc.chunk.js"
   ]
 }
