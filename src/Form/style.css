@@ -20,6 +20,7 @@
     font-size: 16px;
     margin: 0px 2px;
     background-color: white;
+    word-break: break-word;
 }
 
 .form__button {
