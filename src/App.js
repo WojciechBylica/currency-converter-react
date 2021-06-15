@@ -5,7 +5,7 @@ import Form from "./Form";
 import Footer from "./Footer";
 
 function App() {
-  const [currencies, setCurrencies] = useState([
+  const currencies = [
     {
       id: "PLN",
       name: "PLN",
@@ -26,19 +26,7 @@ function App() {
       name: "RUB",
       value: 0.2,
     },
-  ]);
-
-  const [newCurrencyValue, setNewCurrencyValue] = useState();
-
-  const toggleCurrencyValue = (id) => {
-    setCurrencies(currencies => currencies.map(currency => {
-      if (currency.id === id) {
-        return { ...currency, value: newCurrencyValue };
-      }
-
-      return currency;
-    }));
-  };
+  ];
 
   const [hideRates, setHideRates] = useState(true);
 
@@ -51,8 +39,6 @@ function App() {
       <Header title="Przelicznik walut" />
       <Main>
         <Form
-          setNewCurrencyValue={setNewCurrencyValue}
-          toggleCurrencyValue={toggleCurrencyValue}
           hideRates={hideRates}
           toggleHideRates={toggleHideRates}
           currencies={currencies}
