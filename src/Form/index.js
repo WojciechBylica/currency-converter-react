@@ -5,7 +5,7 @@ import Fieldset from "./Fieldset";
 import DivButtons from "./DivButtons";
 
 
-const Form = ({ currencies, toggleHideRates, hideRates, setNewCurrencyValue, toggleCurrencyValue }) => {
+const Form = ({ currencies, toggleHideRates, hideRates }) => {
 
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
@@ -75,27 +75,23 @@ const Form = ({ currencies, toggleHideRates, hideRates, setNewCurrencyValue, tog
                         />
                     </label>
                 </Fieldset>
-                <DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates}/>
+                <DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />
                 <Results
                     result={result}
                     amount={amount} />
-                <fieldset  className={`form__fieldset ${hideRates === true ? "form__currency--hidden" : ""}`}>
-                                    <legend>Kursy walut</legend>
+                <fieldset className={`form__fieldset ${hideRates === true ? "form__currency--hidden" : ""}`}>
+                    <legend>Kursy walut</legend>
                     {currencies.slice(1).map(currency =>
                         <label>
                             {currency.name}
                             <input
-                                onChange={(event) => {
-                                    setNewCurrencyValue(event.target.value)
-                                    toggleCurrencyValue(currency.id)
-                                }}
+                                onChange={(event) => currency.value = event.target.value}
                                 key={currency.id}
                                 type="number"
                                 className="form__field"
                                 min="0.01"
                                 step="0.01"
-                                value={currency.value}
-                            // readOnly={true}
+                                defaultValue={currency.value}
                             />
                         </label>
                     )}
