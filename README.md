@@ -12,7 +12,7 @@ In react-currency-conventer You can:
 - convert in all dirrections between currencies
 
 #### Preview:
-![Preview of responsivity](/src/images/CurrencyConventerPreview.gif)
+![Preview](/src/images/CurrencyConventerPreview.gif)
 
 ### Technology used to build the page:
 - html
