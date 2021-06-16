@@ -11,8 +11,8 @@ In react-currency-conventer You can:
 - use default rates, or own rates
 - convert in all dirrections between currencies
 
-#### Preview of responsivity:
-![Preview of responsivity](/src/images/previewMonitorOrPhone.gif)
+#### Preview:
+![Preview of responsivity](/src/images/CurrencyConventerPreview.gif)
 
 ### Technology used to build the page:
 - html
