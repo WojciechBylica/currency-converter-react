@@ -1,4 +1,7 @@
 # Currency Conventer
+![logo](/public/currencyConventerLogo.png)
+ - written by: Wojciech Bylica
+ - date: 16.06.2021
 
 ## Demo
 
