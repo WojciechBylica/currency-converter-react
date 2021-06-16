@@ -12,10 +12,10 @@ In react-currency-conventer You can:
 - convert in all dirrections between currencies
 
 #### Preview of funcionality:
-![Preview of funcionality](/src/images/taskListPreview.gif)
+![Preview of funcionality](/src/images/previewOfFuncionality.gif)
 
 #### Preview of responsivity:
-![Preview of responsivity](/src/images/bigAndSmallScreenPreview.gif)
+![Preview of responsivity](/src/images/previewMonitorOrPhone.gif)
 
 ### Technology used to build the page:
 - html
