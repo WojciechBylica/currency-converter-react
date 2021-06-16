@@ -4,7 +4,27 @@
 
 https://wojciechbylica.github.io/currency-conventer-react/
 
+### Description
 
+In react-currency-conventer You can:
+- count currency convertions
+- use default rates, or own rates
+- convert in all dirrections between currencies
+
+#### Preview of funcionality:
+![Preview of funcionality](/src/images/taskListPreview.gif)
+
+#### Preview of responsivity:
+![Preview of responsivity](/src/images/bigAndSmallScreenPreview.gif)
+
+### Technology used to build the page:
+- html
+- css with BEM 
+- Flex
+- EC6+
+- Immutability
+- React
+- Babel
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
