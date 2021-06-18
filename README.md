@@ -13,7 +13,7 @@ In react-currency-conventer You can:
 - count currency convertions
 - use default rates, or own rates
 - convert in all dirrections between currencies
-
+- see actual date presented in formatt dedicated to Your country
 #### Preview:
 ![Preview](/src/images/currencyConventerPreview.gif)
 
