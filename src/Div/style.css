@@ -1,0 +1,5 @@
+.main__div {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+}
