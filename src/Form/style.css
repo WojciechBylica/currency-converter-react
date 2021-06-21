@@ -23,24 +23,6 @@
     word-break: break-word;
 }
 
-.form__button {
-    margin: 0;
-    background-color: #efb9b9;
-    width: 100%;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 16px;
-}
-
-.form__button:hover {
-    background-color: #fd6969fa;
-}
-
-.form__button:active {
-    background-color: #f35555fa;
-}
-
 .form__currency--hidden {
     display: none;
 }
@@ -58,9 +40,4 @@
 
 .form__field--background:hover {
     background-color: #fd6969fa;
-}
-
-.form__display {
-    display: flex;
-    margin: 10px 0;
 }
