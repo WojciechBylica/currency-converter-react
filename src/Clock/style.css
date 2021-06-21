@@ -2,4 +2,5 @@
     display: flex;
     justify-content: flex-end;
     font-size: 12px;
+    font-family: monospace;
 }
