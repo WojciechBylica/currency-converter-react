@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./style.css";
 import Results from "./Results";
 import Buttons from "./Buttons";
-import currencies from "../Currencies";
+import currencies from "../currencies";
 
 const Form = ({ toggleHideRates, hideRates }) => {
     const [amount, setAmount] = useState("");
