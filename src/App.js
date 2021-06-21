@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from "./Header";
 import Main from "./Main";
-import Div from "./Div";
+import Clock from "./Clock";
 import Form from "./Form";
 import Footer from "./Footer";
 
@@ -13,16 +13,16 @@ function App() {
     setHideRates(hideRates => !hideRates);
   };
 
-  const [actualDate, setActualDate] = useState(new Date())
+  const [currentDate, setCurrentDate] = useState(new Date())
 
   useEffect(() => {
 
     setInterval(() => {
-      setActualDate(new Date());
+      setCurrentDate(new Date());
     }, 1000);
 
     return () => {
-      clearInterval(setActualDate)
+      clearInterval(setCurrentDate)
     };
   }, [])
 
@@ -30,7 +30,7 @@ function App() {
     <>
       <Header title="Przelicznik walut" />
       <Main>
-        <Div actualDate={actualDate} />
+        <Clock date={currentDate} />
         <Form
           hideRates={hideRates}
           toggleHideRates={toggleHideRates}

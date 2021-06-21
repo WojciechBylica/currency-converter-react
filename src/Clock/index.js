@@ -1,9 +1,9 @@
 
 import "./style.css";
 
-const Div = ({ actualDate }) => (
+const Clock = ({ date }) => (
     <div className="main__div">
-        {actualDate.toLocaleDateString(undefined, {
+        {date.toLocaleDateString(undefined, {
             month: "long",
             weekday: "long",
             day: "numeric",
@@ -15,4 +15,4 @@ const Div = ({ actualDate }) => (
     </div>
 );
 
-export default Div;
+export default Clock;
