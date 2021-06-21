@@ -2,7 +2,7 @@
 import "./style.css";
 
 const Clock = ({ date }) => (
-    <div className="main__div">
+    <div className="clock">
         {date.toLocaleDateString(undefined, {
             month: "long",
             weekday: "long",
