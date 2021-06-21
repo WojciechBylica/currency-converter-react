@@ -4,9 +4,7 @@ import Results from "./Results";
 import DivButtons from "./DivButtons";
 import currencies from "../Currencies";
 
-
 const Form = ({ toggleHideRates, hideRates }) => {
-
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
     const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
@@ -16,7 +14,6 @@ const Form = ({ toggleHideRates, hideRates }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-
 
         const valueFrom = currencies.find(({ name }) => name === currencyFrom);
         const valueTo = currencies.find(({ name }) => name === currencyTo);
