@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./style.css";
 import Results from "./Results";
-import DivButtons from "./DivButtons";
+import Buttons from "./Buttons";
 import currencies from "../Currencies";
 
 const Form = ({ toggleHideRates, hideRates }) => {
@@ -28,7 +28,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
                 <fieldset className="form__fieldset">
                     < label >
                         Wybierz walutę do przeliczenia:
-                            <select
+                        <select
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}
                             name="currencyFrom"
@@ -44,7 +44,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
                     </label >
                     < label >
                         Wybierz walutę docelową:
-                            <select
+                        <select
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}
                             name="currencyTo"
@@ -60,7 +60,7 @@ const Form = ({ toggleHideRates, hideRates }) => {
                     </label >
                     <label>
                         Wpisz kwotę:
-                    <input
+                        <input
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             type="number"
@@ -71,10 +71,11 @@ const Form = ({ toggleHideRates, hideRates }) => {
                         />
                     </label>
                 </fieldset>
-                <DivButtons hideRates={hideRates} toggleHideRates={toggleHideRates} />
+                <Buttons hideRates={hideRates} toggleHideRates={toggleHideRates} />
                 <Results
                     result={result}
-                    amount={amount} />
+                    amount={amount}
+                />
                 <fieldset className={`form__fieldset ${hideRates === true ? "form__currency--hidden" : ""}`}>
                     <legend>Kursy walut</legend>
                     {currencies.slice(1).map(currency =>
