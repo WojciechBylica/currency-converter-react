@@ -1,5 +1,4 @@
 
-import { useState, useEffect } from "react";
 import { Wrapper } from "./styled";
 import { useClock } from "./useClock";
 
