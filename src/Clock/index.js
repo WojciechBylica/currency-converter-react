@@ -1,20 +1,18 @@
 
-import "./style.css";
+import { useState, useEffect } from "react";
+import { Wrapper } from "./styled";
+import { useClock } from "./useClock";
 
-const formatDate = (date) => date.toLocaleDateString(undefined, {
-    month: "long",
-    weekday: "long",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric"
-});
+const Clock = () => {
+    const {
+        currentDate,
+        formatDate,
+    } = useClock()
 
-const Clock = ({ date }) => (
-    <div className="clock">
-        {formatDate(date)}
-    </div>
-);
-
+    return (
+        <Wrapper>
+            {formatDate(currentDate)}
+        </Wrapper>
+    );
+};
 export default Clock;
