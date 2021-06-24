@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import "./style.css";
 import Results from "./Results";
 import Buttons from "./Buttons";
 import currencies from "../currencies";
+import { StyledForm, Fieldset, FormField, Input } from './styled';
 
 const Form = () => {
     const [hideRates, setHideRates] = useState(true);
     const toggleHideRates = () => {
-      setHideRates(hideRates => !hideRates);
+        setHideRates(hideRates => !hideRates);
     };
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
@@ -28,15 +28,14 @@ const Form = () => {
 
     return (
         <>
-            <form className="form" onSubmit={onFormSubmit}>
-                <fieldset className="form__fieldset">
+            <StyledForm onSubmit={onFormSubmit}>
+                <Fieldset>
                     < label >
                         Wybierz walutę do przeliczenia:
-                        <select
+                        <FormField
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}
                             name="currencyFrom"
-                            className="form__field form__field--background"
                             required
                         >
                             {currencies.map(currency => (
@@ -44,15 +43,14 @@ const Form = () => {
                                     {currency.id}
                                 </option>
                             ))}
-                        </select>
+                        </FormField>
                     </label >
                     < label >
                         Wybierz walutę docelową:
-                        <select
+                        <FormField
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}
                             name="currencyTo"
-                            className="form__field form__field--background"
                             required
                         >
                             {currencies.map(currency => (
@@ -60,44 +58,42 @@ const Form = () => {
                                     {currency.name}
                                 </option>
                             ))}
-                        </select>
+                        </FormField>
                     </label >
                     <label>
                         Wpisz kwotę:
-                        <input
+                        <Input as="input"
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             type="number"
-                            className="form__field"
                             min="0.01"
                             required
                             step="0.01"
                         />
                     </label>
-                </fieldset>
+                </Fieldset>
                 <Buttons hideRates={hideRates} toggleHideRates={toggleHideRates} />
                 <Results
                     result={result}
                     amount={amount}
                 />
-                <fieldset className={`form__fieldset ${hideRates === true ? "form__currency--hidden" : ""}`}>
+                <Fieldset hidden={hideRates ? true : false}>
                     <legend>Kursy walut</legend>
                     {currencies.slice(1).map(currency =>
                         <label>
                             {currency.name}
-                            <input
+                            <Input as="input"
                                 onChange={(event) => currency.value = event.target.value}
                                 key={currency.id}
                                 type="number"
-                                className="form__field"
                                 min="0.01"
                                 step="0.01"
                                 defaultValue={currency.value}
                             />
                         </label>
                     )}
-                </fieldset>
-            </form>
+                </Fieldset>
+            </StyledForm>
         </>
     );
 };
