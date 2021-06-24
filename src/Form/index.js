@@ -4,7 +4,11 @@ import Results from "./Results";
 import Buttons from "./Buttons";
 import currencies from "../currencies";
 
-const Form = ({ toggleHideRates, hideRates }) => {
+const Form = () => {
+    const [hideRates, setHideRates] = useState(true);
+    const toggleHideRates = () => {
+      setHideRates(hideRates => !hideRates);
+    };
     const [amount, setAmount] = useState("");
     const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
     const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
