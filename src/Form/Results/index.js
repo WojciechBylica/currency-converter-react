@@ -1,9 +1,12 @@
+import { Result } from "./styled";
+
 const Results = ({ result }) => {
-          
+
     return (
         !!result && (
-            <p className="form__results">
-                {result.amount} {result.currencyFrom} to {result.value.toFixed(2)} {result.currencyTo}</p>
+            <Result>
+                {result.amount} {result.currencyFrom} to {result.value.toFixed(2)} {result.currencyTo}
+            </Result>
         )
     );
 }
