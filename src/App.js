@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Container from "./Container";
 import Header from "./Header";
 import Main from "./Main";
@@ -7,31 +7,18 @@ import Form from "./Form";
 import Footer from "./Footer";
 
 function App() {
-
   const [hideRates, setHideRates] = useState(true);
 
   const toggleHideRates = () => {
     setHideRates(hideRates => !hideRates);
   };
 
-  const [currentDate, setCurrentDate] = useState(new Date())
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId)
-    };
-  }, [])
-
   return (
     <>
       <Container>
         <Header title="Przelicznik walut" />
         <Main>
-          <Clock date={currentDate} />
+          <Clock />
           <Form
             hideRates={hideRates}
             toggleHideRates={toggleHideRates}
@@ -42,6 +29,6 @@ function App() {
       </Container>
     </>
   );
-}
+};
 
 export default App;
