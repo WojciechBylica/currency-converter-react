@@ -1,19 +1,18 @@
-import "./style.css";
+import { ButtonsWrapper, Button } from "./styled";
 
 const Buttons = ({ hideRates, toggleHideRates }) => {
 
     return (
-        <div className="buttons">
-            <button className="buttons__button">Przelicz waluty</button>
+        <ButtonsWrapper>
+            <Button>Przelicz waluty</Button>
 
-            <button
+            <Button
                 onClick={toggleHideRates}
                 type="button"
-                className="buttons__button"
             >
                 {`${hideRates === true ? "Pokaż" : "Ukryj"}`} Kursy
-            </button>
-        </div>
+            </Button>
+        </ButtonsWrapper>
     );
 };
 

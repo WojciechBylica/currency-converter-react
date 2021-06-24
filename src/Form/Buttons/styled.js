@@ -1,9 +1,11 @@
-.buttons {
+import styled from "styled-components";
+
+export const ButtonsWrapper = styled.div`
     display: flex;
     margin: 10px 0;
-}
+`;
 
-.buttons__button {
+export const Button = styled.button`
     margin: 0;
     background-color: #efb9b9;
     width: 100%;
@@ -11,12 +13,11 @@
     border-radius: 5px;
     padding: 12px;
     font-size: 16px;
-}
 
-.buttons__button:hover {
+    &:hover {
     background-color: #fd6969fa;
 }
-
-.buttons__button:active {
+    &:active {
     background-color: #f35555fa;
 }
+`;
