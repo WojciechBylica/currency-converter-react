@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Results from "./Results";
 import Buttons from "./Buttons";
 import currencies from "../currencies";
-import { StyledForm, Fieldset, FormField, Input } from './styled';
+import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
 
 const Form = () => {
     const [hideRates, setHideRates] = useState(true);
@@ -77,8 +77,8 @@ const Form = () => {
                     result={result}
                     amount={amount}
                 />
-                <Fieldset hidden={hideRates ? true : false}>
-                    <legend>Kursy walut</legend>
+                {!hideRates && <Fieldset>
+                    <legend><StyledSpan>Kursy walut</StyledSpan></legend>
                     {currencies.slice(1).map(currency =>
                         <label>
                             {currency.name}
@@ -92,7 +92,7 @@ const Form = () => {
                             />
                         </label>
                     )}
-                </Fieldset>
+                </Fieldset>}
             </StyledForm>
         </>
     );

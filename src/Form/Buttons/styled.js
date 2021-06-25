@@ -7,17 +7,17 @@ export const ButtonsWrapper = styled.div`
 
 export const Button = styled.button`
     margin: 0;
-    background-color: #efb9b9;
+    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColor};
     width: 100%;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border: ${({theme}) => theme.ElementBorder};
+    border-radius: ${({theme}) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
 
     &:hover {
-    background-color: #fd6969fa;
+        background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorHover};
 }
     &:active {
-    background-color: #f35555fa;
+        background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorActive};
 }
 `;
