@@ -25,6 +25,5 @@ export const useForm = () => {
         hideRates,
         toggleHideRates,
         result,
-
-    }
+    };
 };
