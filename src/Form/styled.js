@@ -6,11 +6,11 @@ export const StyledForm = styled.form`
 
 export const Fieldset = styled.fieldset`
     width: 100%;
-    border: 1px solid grey;
+    border: ${({ theme }) => theme.ElementBorder};
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
-    background-color: rgb(231 239 239 / 70%);
+    background-color: rgb(231 239 239 / 75%);
 `;
 
 export const FormField = styled.select`
