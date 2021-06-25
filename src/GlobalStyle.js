@@ -14,8 +14,8 @@ html {
 }
 
 body {
-  background-color: #e5e5e3;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Money-2180330_1920.jpg/1024px-Money-2180330_1920.jpg");
+  background-color: ${({theme}) => theme.Body.BodyBackgroundColor};
+  background-image: ${({theme}) => theme.Body.BodyBackgroundImage};
   background-repeat: no-repeat;
   background-position: top;
   font-family: 'Libre Franklin', sans-serif;
