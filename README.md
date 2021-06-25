@@ -1,7 +1,7 @@
 # Currency Conventer
 ![logo](/public/currencyConventerLogo.png)
  - written by: Wojciech Bylica
- - date: 16.06.2021
+ - date: 26.06.2021
 
 ## Demo
 
@@ -25,6 +25,8 @@ In react-currency-conventer You can:
 - Immutability
 - React
 - Babel
+- styled-components
+- normalize
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
