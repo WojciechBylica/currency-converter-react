@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
 import Results from "./Results";
 import Buttons from "./Buttons";
 import currencies from "../currencies";
 import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
+import { useForm } from './useForm';
 
 const Form = () => {
-    const [hideRates, setHideRates] = useState(true);
-    const toggleHideRates = () => {
-        setHideRates(hideRates => !hideRates);
-    };
-    const [amount, setAmount] = useState("");
-    const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
-    const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
-    const [result, setResult] = useState();
-
-    const calculateResult = (amount, valueFrom, valueTo) => +amount * +valueFrom / +valueTo;
+    const {
+        currencyFrom,
+        currencyTo,
+        calculateResult,
+        amount,
+        setAmount,
+        setResult,
+        setCurrencyFrom,
+        setCurrencyTo,
+        hideRates,
+        toggleHideRates,
+        result,
+    } = useForm()
 
     const onFormSubmit = (event) => {
         event.preventDefault();
