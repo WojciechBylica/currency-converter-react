@@ -8,6 +8,6 @@ export const Result = styled.p`
     padding: 12px;
     font-size: 16px;
     margin: 0px 2px;
-    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorSecondary};
+    background-color: ${({ theme }) => theme.BackgroundColor.White};
     word-break: break-word;
 `;

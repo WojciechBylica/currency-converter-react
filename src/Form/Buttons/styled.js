@@ -7,7 +7,7 @@ export const ButtonsWrapper = styled.div`
 
 export const Button = styled.button`
     margin: 0;
-    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColor};
+    background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
     width: 100%;
     border: ${({theme}) => theme.ElementBorder};
     border-radius: ${({theme}) => theme.ElementBorderRadius};
@@ -15,9 +15,9 @@ export const Button = styled.button`
     font-size: 16px;
 
     &:hover {
-        background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorHover};
+        background-color: ${({ theme }) => theme.BackgroundColor.MelroseHover};
 }
     &:active {
-        background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorActive};
+        background-color: ${({ theme }) => theme.BackgroundColor.MelroseActive};
 }
 `;

@@ -10,7 +10,7 @@ export const Fieldset = styled.fieldset`
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
-    background-color: rgb(231 239 239 / 75%);
+    background-color: ${({ theme }) => theme.BackgroundColor.Mystic}
 `;
 
 export const FormField = styled.select`
@@ -19,15 +19,15 @@ export const FormField = styled.select`
     padding: 5px;
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     border: ${({ theme }) => theme.ElementBorder};
-    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColor};
+    background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
 
     &:hover {
-        background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorHover};
+        background-color: ${({ theme }) => theme.BackgroundColor.MelroseHover};
     }
 `;
 
 export const Input = styled(FormField)`
-    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColorSecondary};
+    background-color: ${({ theme }) => theme.BackgroundColor.White};
 `;
 
 export const StyledSpan = styled.span`

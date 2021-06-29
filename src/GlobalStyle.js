@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: ${({theme}) => theme.Body.BodyBackgroundColor};
+  background-color: ${({theme}) => theme.Body.QuillGray};
   background-image: ${({theme}) => theme.Body.BodyBackgroundImage};
   background-repeat: no-repeat;
   background-position: top;
