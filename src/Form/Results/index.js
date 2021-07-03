@@ -7,5 +7,4 @@ const Results = ({ result }) => (
         </Result>
     )
 );
-
 export default Results;

@@ -7,5 +7,4 @@ const Loader = () => (
         </Fieldset>
     </>
 );
-
 export default Loader;

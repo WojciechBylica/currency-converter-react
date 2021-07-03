@@ -9,7 +9,6 @@ export const useForm = () => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
     const [currencyTo, setCurrencyTo] = useState("UER");
     const [result, setResult] = useState();
-
     const calculateResult = (amount, valueFrom, valueTo) => +amount * +valueFrom / +valueTo;
 
     return {

@@ -3,5 +3,4 @@ const Main = ({ children }) => (
         {children}
     </main>
 );
-
 export default Main;

@@ -5,5 +5,4 @@ const Header = ({ title }) => (
         <H1>{title}</H1>
     </header>
 );
-
 export default Header;

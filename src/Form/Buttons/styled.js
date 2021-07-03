@@ -9,8 +9,8 @@ export const Button = styled.button`
     margin: 0;
     background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
     width: 100%;
-    border: ${({theme}) => theme.ElementBorder};
-    border-radius: ${({theme}) => theme.ElementBorderRadius};
+    border: ${({ theme }) => theme.ElementBorder};
+    border-radius: ${({ theme }) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
 

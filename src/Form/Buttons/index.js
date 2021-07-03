@@ -1,11 +1,9 @@
 import { ButtonsWrapper, Button } from "./styled";
 
 const Buttons = ({ hideRates, toggleHideRates }) => {
-
     return (
         <ButtonsWrapper>
             <Button>Przelicz waluty</Button>
-
             <Button
                 onClick={toggleHideRates}
                 type="button"
@@ -15,5 +13,4 @@ const Buttons = ({ hideRates, toggleHideRates }) => {
         </ButtonsWrapper>
     );
 };
-
 export default Buttons;

@@ -21,7 +21,6 @@ const Form = ({ dataFromAPI }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-
         const valueFrom = 1 / +dataFromAPI.rates[currencyFrom];
         const valueTo = 1 / +dataFromAPI.rates[currencyTo];
         const result = calculateResult(amount, valueFrom, valueTo);
@@ -99,5 +98,4 @@ const Form = ({ dataFromAPI }) => {
         </>
     )
 };
-
 export default Form;
