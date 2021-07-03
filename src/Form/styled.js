@@ -33,5 +33,5 @@ export const Input = styled(FormField)`
 export const StyledSpan = styled.span`
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     border: ${({ theme }) => theme.ElementBorder};
-    background-color: ${({ theme }) => theme.BackgroundColor.ElementBackgroundColor};
+    background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
 `;
