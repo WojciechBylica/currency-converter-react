@@ -1,10 +1,10 @@
 import Results from "./Results";
 import Buttons from "./Buttons";
-import currencies from "../currencies";
 import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
 import { useForm } from './useForm';
+import { Wrapper } from "../Clock/styled";
 
-const Form = () => {
+const Form = ({ dataFromAPI }) => {
     const {
         currencyFrom,
         currencyTo,
@@ -22,15 +22,17 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const valueFrom = currencies.find(({ name }) => name === currencyFrom);
-        const valueTo = currencies.find(({ name }) => name === currencyTo);
-        const result = calculateResult(amount, valueFrom.value, valueTo.value);
+        const valueFrom = 1 / +dataFromAPI.rates[currencyFrom];
+        const valueTo = 1 / +dataFromAPI.rates[currencyTo];
+        const result = calculateResult(amount, valueFrom, valueTo);
         setResult({ amount: amount, currencyFrom: currencyFrom, value: result, currencyTo: currencyTo });
         setAmount("");
     };
 
+    console.log(dataFromAPI.rates)
     return (
         <>
+            <Wrapper> Aktualizacja kursów: {dataFromAPI.date}</Wrapper>
             <StyledForm onSubmit={onFormSubmit}>
                 <Fieldset>
                     < label >
@@ -41,9 +43,9 @@ const Form = () => {
                             name="currencyFrom"
                             required
                         >
-                            {currencies.map(currency => (
-                                <option key={currency.id}>
-                                    {currency.id}
+                            {Object.keys(dataFromAPI.rates).map(currencyFrom => (
+                                <option key={currencyFrom}>
+                                    {currencyFrom}
                                 </option>
                             ))}
                         </FormField>
@@ -56,9 +58,9 @@ const Form = () => {
                             name="currencyTo"
                             required
                         >
-                            {currencies.map(currency => (
-                                <option key={currency.id}>
-                                    {currency.name}
+                            {Object.keys(dataFromAPI.rates).map(currencyTo => (
+                                <option key={currencyTo}>
+                                    {currencyTo}
                                 </option>
                             ))}
                         </FormField>
@@ -82,23 +84,20 @@ const Form = () => {
                 />
                 {!hideRates && <Fieldset>
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
-                    {currencies.slice(1).map(currency =>
+                    {Object.keys(dataFromAPI.rates).filter(currency => currency !== "PLN").map(currency =>
                         <label>
-                            {currency.name}
+                            {currency}
                             <Input as="input"
-                                onChange={(event) => currency.value = event.target.value}
-                                key={currency.id}
-                                type="number"
-                                min="0.01"
-                                step="0.01"
-                                defaultValue={currency.value}
+                                key={currency}
+                                readonly
+                                defaultValue={1 / +dataFromAPI.rates[currency]}
                             />
                         </label>
                     )}
                 </Fieldset>}
             </StyledForm>
         </>
-    );
+    )
 };
 
 export default Form;
