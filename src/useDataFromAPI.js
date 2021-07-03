@@ -11,9 +11,10 @@ export const useDataFromAPI = () => {
         const getDataFromAPI = async () => {
             try {
                 const response = await axios.get('https://api.exchangerate.host/latest?symbols=PLN,EUR,USD,RUB&base=PLN')
+                const {date, rates} = response.data;
                 setDataFromAPI({
-                    date: response.data.date,
-                    rates: response.data.rates,
+                    date,
+                    rates,
                     status: "success",
                 });
             } catch (error) {
@@ -22,7 +23,5 @@ export const useDataFromAPI = () => {
         };
         setTimeout(getDataFromAPI, 2000);
     }, []);
-    return {
-        dataFromAPI,
-    };
+    return dataFromAPI;
 };
