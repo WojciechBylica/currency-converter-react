@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/currency-conventer-react/static/js/main.4e5b78d9.chunk.js",
-    "main.js.map": "/currency-conventer-react/static/js/main.4e5b78d9.chunk.js.map",
-    "runtime-main.js": "/currency-conventer-react/static/js/runtime-main.64fe54f6.js",
-    "runtime-main.js.map": "/currency-conventer-react/static/js/runtime-main.64fe54f6.js.map",
-    "static/js/2.2f3a4cd9.chunk.js": "/currency-conventer-react/static/js/2.2f3a4cd9.chunk.js",
-    "static/js/2.2f3a4cd9.chunk.js.map": "/currency-conventer-react/static/js/2.2f3a4cd9.chunk.js.map",
-    "static/js/3.20ed87f2.chunk.js": "/currency-conventer-react/static/js/3.20ed87f2.chunk.js",
-    "static/js/3.20ed87f2.chunk.js.map": "/currency-conventer-react/static/js/3.20ed87f2.chunk.js.map",
+    "main.js": "/currency-conventer-react/static/js/main.ea498872.chunk.js",
+    "main.js.map": "/currency-conventer-react/static/js/main.ea498872.chunk.js.map",
+    "runtime-main.js": "/currency-conventer-react/static/js/runtime-main.6acc50e5.js",
+    "runtime-main.js.map": "/currency-conventer-react/static/js/runtime-main.6acc50e5.js.map",
+    "static/js/2.103885ba.chunk.js": "/currency-conventer-react/static/js/2.103885ba.chunk.js",
+    "static/js/2.103885ba.chunk.js.map": "/currency-conventer-react/static/js/2.103885ba.chunk.js.map",
+    "static/js/3.73d95ed6.chunk.js": "/currency-conventer-react/static/js/3.73d95ed6.chunk.js",
+    "static/js/3.73d95ed6.chunk.js.map": "/currency-conventer-react/static/js/3.73d95ed6.chunk.js.map",
     "index.html": "/currency-conventer-react/index.html",
-    "static/js/2.2f3a4cd9.chunk.js.LICENSE.txt": "/currency-conventer-react/static/js/2.2f3a4cd9.chunk.js.LICENSE.txt"
+    "static/js/2.103885ba.chunk.js.LICENSE.txt": "/currency-conventer-react/static/js/2.103885ba.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.64fe54f6.js",
-    "static/js/2.2f3a4cd9.chunk.js",
-    "static/js/main.4e5b78d9.chunk.js"
+    "static/js/runtime-main.6acc50e5.js",
+    "static/js/2.103885ba.chunk.js",
+    "static/js/main.ea498872.chunk.js"
   ]
 }
