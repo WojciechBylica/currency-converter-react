@@ -28,7 +28,6 @@ const Form = ({ dataFromAPI }) => {
         setAmount("");
     };
 
-    console.log(dataFromAPI.rates)
     return (
         <>
             <Wrapper> Aktualizacja kursów: {dataFromAPI.date}</Wrapper>
@@ -86,11 +85,9 @@ const Form = ({ dataFromAPI }) => {
                     {Object.keys(dataFromAPI.rates).filter(currency => currency !== "PLN").map(currency =>
                         <label>
                             {currency}
-                            <Input as="input"
-                                key={currency}
-                                readonly
-                                defaultValue={1 / +dataFromAPI.rates[currency]}
-                            />
+                            <Input as="p">
+                                {1 / +dataFromAPI.rates[currency]}
+                            </Input>
                         </label>
                     )}
                 </Fieldset>}
