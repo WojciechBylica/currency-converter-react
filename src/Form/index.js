@@ -85,7 +85,8 @@ const Form = ({ dataFromAPI }) => {
                     {Object.keys(dataFromAPI.rates).filter(currency => currency !== "PLN").map(currency =>
                         <label>
                             {currency}
-                            <Input as="p">
+                            <Input as="p"
+                            key= {currency}>
                                 {1 / +dataFromAPI.rates[currency]}
                             </Input>
                         </label>
