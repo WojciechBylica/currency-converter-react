@@ -9,9 +9,7 @@ import Error from "./Error";
 import { useDataFromAPI } from "./useDataFromAPI";
 
 function App() {
-  const {
-    dataFromAPI,
-  } = useDataFromAPI()
+  const dataFromAPI = useDataFromAPI()
 
   return (
     <>
