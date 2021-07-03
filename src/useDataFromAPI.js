@@ -16,7 +16,6 @@ export const useDataFromAPI = () => {
                     rates: response.data.rates,
                     status: "success",
                 });
-
             } catch (error) {
                 setDataFromAPI({ status: "error" });
             }
