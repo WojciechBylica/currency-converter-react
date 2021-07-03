@@ -1,7 +1,7 @@
 # Currency Conventer
 ![logo](/public/currencyConventerLogo.png)
  - written by: Wojciech Bylica
- - date: 26.06.2021
+ - date: 03.07.2021
 
 ## Demo
 
@@ -10,10 +10,10 @@ https://wojciechbylica.github.io/currency-conventer-react/
 ### Description
 
 In react-currency-conventer You can:
-- count currency convertions
-- use default rates, or own rates
+- count currency convertions using actual rates uploaded from European Central Bank
 - convert in all dirrections between currencies
-- see actual date presented in format dedicated to Your country
+- see actual date presented in format dedicated to Your country 
+- see date of uploading rates
 #### Preview:
 ![Preview](/src/images/currencyConventerPreview.gif)
 
