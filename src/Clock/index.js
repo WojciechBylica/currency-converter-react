@@ -10,7 +10,7 @@ const Clock = () => {
 
     return (
         <Wrapper>
-            {formatDate(currentDate)}
+            Dzisiaj jest: {formatDate(currentDate)}
         </Wrapper>
     );
 };
