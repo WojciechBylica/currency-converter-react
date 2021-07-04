@@ -14,10 +14,9 @@ html {
 }
 
 body {
-  background-color: ${({ theme }) => theme.Body.QuillGray};
-  background-image: ${({ theme }) => theme.Body.BodyBackgroundImage};
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: top; 
+  background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
   font-family: 'Libre Franklin', sans-serif;
   padding: 10px;
   font-size: 16px;
