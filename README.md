@@ -14,9 +14,6 @@ In react-currency-conventer You can:
 - convert in all dirrections between currencies
 - see actual date presented in format dedicated to Your country 
 - see date of uploading rates
-#### Preview:
-![Preview](/src/images/currencyConventerPreview.gif)
-
 ### Technology used to build the page:
 - html
 - css with BEM 
