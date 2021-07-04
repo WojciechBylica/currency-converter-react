@@ -10,7 +10,8 @@ export const Fieldset = styled.fieldset`
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
-    background-color: ${({ theme }) => theme.BackgroundColor.Mystic}
+    background-color: ${({ theme }) => theme.BackgroundColor.Mystic};
+    box-shadow: 2px 2px 5px #1d1b1b;
 `;
 
 export const FormField = styled.select`
