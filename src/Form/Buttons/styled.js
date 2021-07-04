@@ -13,6 +13,7 @@ export const Button = styled.button`
     border-radius: ${({ theme }) => theme.ElementBorderRadius};
     padding: 12px;
     font-size: 16px;
+    box-shadow: 2px 2px 5px #1d1b1b;
 
     &:hover {
         background-color: ${({ theme }) => theme.BackgroundColor.MelroseHover};
