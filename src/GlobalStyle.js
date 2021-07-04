@@ -16,7 +16,7 @@ html {
 body {
   background-repeat: no-repeat;
   background-position: top; 
-  background-color: ${({ theme }) => theme.BackgroundColor.Melrose};
+  background-color: ${({ theme }) => theme.backgroundColor.melrose};
   font-family: 'Libre Franklin', sans-serif;
   padding: 10px;
   font-size: 16px;
