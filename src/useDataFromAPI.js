@@ -10,7 +10,7 @@ export const useDataFromAPI = () => {
     useEffect(() => {
         const getDataFromAPI = async () => {
             try {
-                const response = await axios.get('https://api.exchangerate.host/latest?symbols=PLN,EUR,USD,RUB&base=PLN')
+                const response = await axios.get('https://api.exchangerate.host/latest?symbols=PLN,EUR,USD,RUB,HRK&base=PLN')
                 const {date, rates} = response.data;
                 setDataFromAPI({
                     date,
