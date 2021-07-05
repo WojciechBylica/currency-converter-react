@@ -10,31 +10,31 @@ import imageLoader from "./images/imageLoader.gif";
 import image from "./images/image.png";
 
 function App() {
-  const dataFromAPI = useDataFromAPI()
+  const dataFromNBP = useDataFromAPI()
 
   return (
     <>
       <Container>
         <Header title="Przelicznik walut" />
-        {dataFromAPI.status === "loading" &&
+        {dataFromNBP.status === "loading" &&
           <Messenger
-            body="Ładuję kursy walut z Europejskiego Banku Centralnego..."
+            body="Ładuję kursy walut z Narodowego Banku Polskiego..."
             source={imageLoader}
             alt="imageLoader"
           />
         }
-        {dataFromAPI.status === "error" &&
+        {dataFromNBP.status === "error" &&
           <Messenger
-          body="Coś poszło nie tak... Sprawdź połączenie z internetem i spróbuj ponownie!"
-          source={image}
-          alt="image"
-        />
+            body="Coś poszło nie tak... Sprawdź połączenie z internetem i spróbuj ponownie!"
+            source={image}
+            alt="image"
+          />
         }
-        {dataFromAPI.status === "success" &&
+        {dataFromNBP.status === "success" &&
           <>
             <Main>
               <Clock />
-              <Form dataFromAPI={dataFromAPI} />
+              <Form dataFromNBP={dataFromNBP} />
             </Main>
             <Footer />
           </>
