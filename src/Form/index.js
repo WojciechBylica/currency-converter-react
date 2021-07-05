@@ -4,16 +4,16 @@ import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
 import { useForm } from './useForm';
 import { Wrapper } from "../Clock/styled";
 
-const Form = ({ dataFromAPI }) => {
+const Form = ({ dataFromNBP }) => {
     const {
         currencyFrom,
         currencyTo,
+        setCurrencyFrom,
+        setCurrencyTo,
         calculateResult,
         amount,
         setAmount,
         setResult,
-        setCurrencyFrom,
-        setCurrencyTo,
         hideRates,
         toggleHideRates,
         result,
@@ -21,16 +21,16 @@ const Form = ({ dataFromAPI }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const valueFrom = 1 / +dataFromAPI.rates[currencyFrom];
-        const valueTo = 1 / +dataFromAPI.rates[currencyTo];
+        const valueFrom = +dataFromNBP.rates[currencyFrom].mid;
+        const valueTo = +dataFromNBP.rates[currencyTo].mid;
         const result = calculateResult(amount, valueFrom, valueTo);
-        setResult({ amount: amount, currencyFrom: currencyFrom, value: result, currencyTo: currencyTo });
+        setResult({ amount: amount, currencyFrom: dataFromNBP.rates[currencyFrom].code, value: result, currencyTo: dataFromNBP.rates[currencyTo].code });
         setAmount("");
     };
-
     return (
         <>
-            <Wrapper> Aktualizacja kursów: {dataFromAPI.date}</Wrapper>
+            <Wrapper> Aktualizacja kursów: {dataFromNBP.date}</Wrapper>
+            <Wrapper>{dataFromNBP.table}</Wrapper>
             <StyledForm onSubmit={onFormSubmit}>
                 <Fieldset>
                     < label >
@@ -41,9 +41,12 @@ const Form = ({ dataFromAPI }) => {
                             name="currencyFrom"
                             required
                         >
-                            {Object.keys(dataFromAPI.rates).map(currencyFrom => (
-                                <option key={currencyFrom}>
-                                    {currencyFrom}
+                            {Object.keys(dataFromNBP.rates).map(currencyFrom => (
+                                <option
+                                    key={currencyFrom}
+                                    value={currencyFrom}
+                                >
+                                    {dataFromNBP.rates[currencyFrom].code}{" "}{dataFromNBP.rates[currencyFrom].currency}
                                 </option>
                             ))}
                         </FormField>
@@ -56,9 +59,12 @@ const Form = ({ dataFromAPI }) => {
                             name="currencyTo"
                             required
                         >
-                            {Object.keys(dataFromAPI.rates).map(currencyTo => (
-                                <option key={currencyTo}>
-                                    {currencyTo}
+                            {Object.keys(dataFromNBP.rates).map(currencyTo => (
+                                <option
+                                    key={currencyTo}
+                                    value={currencyTo}
+                                >
+                                    {dataFromNBP.rates[currencyTo].code}{" "}{dataFromNBP.rates[currencyTo].currency}
                                 </option>
                             ))}
                         </FormField>
@@ -82,16 +88,17 @@ const Form = ({ dataFromAPI }) => {
                 />
                 {!hideRates && <Fieldset>
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
-                    {Object.keys(dataFromAPI.rates).filter(currency => currency !== "PLN").map(currency =>
+                    {Object.keys(dataFromNBP.rates).map(rate =>
                         <label>
-                            {currency}
+                            {dataFromNBP.rates[rate].code}{" "}{dataFromNBP.rates[rate].currency}
                             <Input as="p"
-                            key= {currency}>
-                                {1 / +dataFromAPI.rates[currency]}
+                                key={dataFromNBP.rates[0].currency}>
+                                {dataFromNBP.rates[rate].mid}
                             </Input>
                         </label>
                     )}
-                </Fieldset>}
+                </Fieldset>
+                }
             </StyledForm>
         </>
     )
