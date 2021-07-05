@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/currency-conventer-react/static/js/main.53431bfc.chunk.js",
-    "main.js.map": "/currency-conventer-react/static/js/main.53431bfc.chunk.js.map",
-    "runtime-main.js": "/currency-conventer-react/static/js/runtime-main.6acc50e5.js",
-    "runtime-main.js.map": "/currency-conventer-react/static/js/runtime-main.6acc50e5.js.map",
-    "static/js/2.103885ba.chunk.js": "/currency-conventer-react/static/js/2.103885ba.chunk.js",
-    "static/js/2.103885ba.chunk.js.map": "/currency-conventer-react/static/js/2.103885ba.chunk.js.map",
-    "static/js/3.73d95ed6.chunk.js": "/currency-conventer-react/static/js/3.73d95ed6.chunk.js",
-    "static/js/3.73d95ed6.chunk.js.map": "/currency-conventer-react/static/js/3.73d95ed6.chunk.js.map",
+    "main.js": "/currency-conventer-react/static/js/main.f12d6153.chunk.js",
+    "main.js.map": "/currency-conventer-react/static/js/main.f12d6153.chunk.js.map",
+    "runtime-main.js": "/currency-conventer-react/static/js/runtime-main.e262a310.js",
+    "runtime-main.js.map": "/currency-conventer-react/static/js/runtime-main.e262a310.js.map",
+    "static/js/2.21d10071.chunk.js": "/currency-conventer-react/static/js/2.21d10071.chunk.js",
+    "static/js/2.21d10071.chunk.js.map": "/currency-conventer-react/static/js/2.21d10071.chunk.js.map",
+    "static/js/3.2f4e9638.chunk.js": "/currency-conventer-react/static/js/3.2f4e9638.chunk.js",
+    "static/js/3.2f4e9638.chunk.js.map": "/currency-conventer-react/static/js/3.2f4e9638.chunk.js.map",
     "index.html": "/currency-conventer-react/index.html",
-    "static/js/2.103885ba.chunk.js.LICENSE.txt": "/currency-conventer-react/static/js/2.103885ba.chunk.js.LICENSE.txt",
+    "static/js/2.21d10071.chunk.js.LICENSE.txt": "/currency-conventer-react/static/js/2.21d10071.chunk.js.LICENSE.txt",
     "static/media/image.761c5393.png": "/currency-conventer-react/static/media/image.761c5393.png",
     "static/media/imageLoader.b543d30c.gif": "/currency-conventer-react/static/media/imageLoader.b543d30c.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.6acc50e5.js",
-    "static/js/2.103885ba.chunk.js",
-    "static/js/main.53431bfc.chunk.js"
+    "static/js/runtime-main.e262a310.js",
+    "static/js/2.21d10071.chunk.js",
+    "static/js/main.f12d6153.chunk.js"
   ]
 }
