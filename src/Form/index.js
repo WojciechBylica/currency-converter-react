@@ -46,7 +46,7 @@ const Form = ({ dataFromNBP }) => {
                                     key={currencyFrom}
                                     value={currencyFrom}
                                 >
-                                    {dataFromNBP.rates[currencyFrom].code}{" "}{dataFromNBP.rates[currencyFrom].currency}
+                                    {dataFromNBP.rates[currencyFrom].currency}{" "}{"("}{dataFromNBP.rates[currencyFrom].code}{")"}
                                 </option>
                             ))}
                         </FormField>
@@ -64,7 +64,7 @@ const Form = ({ dataFromNBP }) => {
                                     key={currencyTo}
                                     value={currencyTo}
                                 >
-                                    {dataFromNBP.rates[currencyTo].code}{" "}{dataFromNBP.rates[currencyTo].currency}
+                                    {dataFromNBP.rates[currencyTo].currency}{" "}{"("}{dataFromNBP.rates[currencyTo].code}{")"}
                                 </option>
                             ))}
                         </FormField>
@@ -90,7 +90,7 @@ const Form = ({ dataFromNBP }) => {
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
                     {Object.keys(dataFromNBP.rates).map(rate =>
                         <label>
-                            {dataFromNBP.rates[rate].code}{" "}{dataFromNBP.rates[rate].currency}
+                            {dataFromNBP.rates[rate].currency}{" "}{"("}{dataFromNBP.rates[rate].code}{")"}
                             <Input as="p"
                                 key={dataFromNBP.rates[0].currency}>
                                 {dataFromNBP.rates[rate].mid}
