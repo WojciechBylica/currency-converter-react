@@ -11,7 +11,7 @@ export const useDataFromAPI = () => {
     useEffect(() => {
         const getDataFromNBP = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/a/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/a/');
                 const responseData = response.data[0].rates;
                 const responseDataWithPLN = [
                     ...responseData,
