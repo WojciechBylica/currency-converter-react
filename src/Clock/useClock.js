@@ -11,20 +11,7 @@ export const useClock = () => {
         return () => {
             clearInterval(intervalId)
         };
-    }, [])
+    }, []);
 
-    const formatDate = (currentDate) => currentDate.toLocaleDateString(undefined, {
-        month: "long",
-        weekday: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric"
-    });
-
-    return {
-        currentDate,
-        formatDate,
-    };
+    return currentDate;
 };
