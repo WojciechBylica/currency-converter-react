@@ -3,6 +3,7 @@ import Buttons from "./Buttons";
 import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
 import { useForm } from './useForm';
 import { Wrapper } from "../Clock/styled";
+import { useState } from "react";
 
 const Form = ({ ratesData }) => {
     const {
@@ -10,21 +11,27 @@ const Form = ({ ratesData }) => {
         currencyTo,
         setCurrencyFrom,
         setCurrencyTo,
-        calculateResult,
         amount,
         setAmount,
         setResult,
-        hideRates,
-        toggleHideRates,
         result,
     } = useForm()
 
+    const rates = ratesData.rates;
+    const ratesFrom = rates[currencyFrom];
+    const ratesTo = rates[currencyTo];
+    const [hideRates, setHideRates] = useState(true);
+    const toggleHideRates = () => {
+        setHideRates(hideRates => !hideRates);
+    };
+    const calculateResult = (amount, valueFrom, valueTo) => +amount * +valueFrom / +valueTo;
+
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const valueFrom = +ratesData.rates[currencyFrom].mid;
-        const valueTo = +ratesData.rates[currencyTo].mid;
+        const valueFrom = +ratesFrom.mid;
+        const valueTo = +ratesTo.mid;
         const result = calculateResult(amount, valueFrom, valueTo);
-        setResult({ amount: amount, currencyFrom: ratesData.rates[currencyFrom].code, value: result, currencyTo: ratesData.rates[currencyTo].code });
+        setResult({ amount: amount, currencyFrom: ratesFrom.code, value: result, currencyTo: ratesTo.code });
         setAmount("");
     };
     return (
@@ -33,7 +40,7 @@ const Form = ({ ratesData }) => {
             <Wrapper>{ratesData.table}</Wrapper>
             <StyledForm onSubmit={onFormSubmit}>
                 <Fieldset>
-                    < label >
+                    <label>
                         Wybierz walutę do przeliczenia:
                         <FormField
                             value={currencyFrom}
@@ -41,17 +48,17 @@ const Form = ({ ratesData }) => {
                             name="currencyFrom"
                             required
                         >
-                            {Object.keys(ratesData.rates).map(currencyFrom => (
+                            {Object.keys(rates).map(currencyFrom => (
                                 <option
                                     key={currencyFrom}
                                     value={currencyFrom}
                                 >
-                                    {ratesData.rates[currencyFrom].currency}{" "}{"("}{ratesData.rates[currencyFrom].code}{")"}
+                                    {ratesFrom.currency}{" ("}{ratesFrom.code})
                                 </option>
                             ))}
                         </FormField>
                     </label >
-                    < label >
+                    <label>
                         Wybierz walutę docelową:
                         <FormField
                             value={currencyTo}
@@ -59,12 +66,12 @@ const Form = ({ ratesData }) => {
                             name="currencyTo"
                             required
                         >
-                            {Object.keys(ratesData.rates).map(currencyTo => (
+                            {Object.keys(rates).map(currencyTo => (
                                 <option
                                     key={currencyTo}
                                     value={currencyTo}
                                 >
-                                    {ratesData.rates[currencyTo].currency}{" "}{"("}{ratesData.rates[currencyTo].code}{")"}
+                                    {ratesTo.currency}{" ("}{ratesTo.code})
                                 </option>
                             ))}
                         </FormField>
@@ -88,11 +95,11 @@ const Form = ({ ratesData }) => {
                 />
                 {!hideRates && <Fieldset>
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
-                    {Object.keys(ratesData.rates).map(rate =>
+                    {Object.keys(rates).map(rate =>
                         <label key={rate}>
-                            {ratesData.rates[rate].currency}{" "}{"("}{ratesData.rates[rate].code}{")"}
+                            {rates[rate].currency}{" ("}{rates[rate].code})
                             <Input as="p">
-                                {ratesData.rates[rate].mid}
+                                {rates[rate].mid}
                             </Input>
                         </label>
                     )}
