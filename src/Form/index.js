@@ -4,7 +4,7 @@ import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
 import { useForm } from './useForm';
 import { Wrapper } from "../Clock/styled";
 
-const Form = ({ dataFromNBP }) => {
+const Form = ({ ratesData }) => {
     const {
         currencyFrom,
         currencyTo,
@@ -21,16 +21,16 @@ const Form = ({ dataFromNBP }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const valueFrom = +dataFromNBP.rates[currencyFrom].mid;
-        const valueTo = +dataFromNBP.rates[currencyTo].mid;
+        const valueFrom = +ratesData.rates[currencyFrom].mid;
+        const valueTo = +ratesData.rates[currencyTo].mid;
         const result = calculateResult(amount, valueFrom, valueTo);
-        setResult({ amount: amount, currencyFrom: dataFromNBP.rates[currencyFrom].code, value: result, currencyTo: dataFromNBP.rates[currencyTo].code });
+        setResult({ amount: amount, currencyFrom: ratesData.rates[currencyFrom].code, value: result, currencyTo: ratesData.rates[currencyTo].code });
         setAmount("");
     };
     return (
         <>
-            <Wrapper> Aktualizacja kursów: {dataFromNBP.date}</Wrapper>
-            <Wrapper>{dataFromNBP.table}</Wrapper>
+            <Wrapper> Aktualizacja kursów: {ratesData.date}</Wrapper>
+            <Wrapper>{ratesData.table}</Wrapper>
             <StyledForm onSubmit={onFormSubmit}>
                 <Fieldset>
                     < label >
@@ -41,12 +41,12 @@ const Form = ({ dataFromNBP }) => {
                             name="currencyFrom"
                             required
                         >
-                            {Object.keys(dataFromNBP.rates).map(currencyFrom => (
+                            {Object.keys(ratesData.rates).map(currencyFrom => (
                                 <option
                                     key={currencyFrom}
                                     value={currencyFrom}
                                 >
-                                    {dataFromNBP.rates[currencyFrom].currency}{" "}{"("}{dataFromNBP.rates[currencyFrom].code}{")"}
+                                    {ratesData.rates[currencyFrom].currency}{" "}{"("}{ratesData.rates[currencyFrom].code}{")"}
                                 </option>
                             ))}
                         </FormField>
@@ -59,12 +59,12 @@ const Form = ({ dataFromNBP }) => {
                             name="currencyTo"
                             required
                         >
-                            {Object.keys(dataFromNBP.rates).map(currencyTo => (
+                            {Object.keys(ratesData.rates).map(currencyTo => (
                                 <option
                                     key={currencyTo}
                                     value={currencyTo}
                                 >
-                                    {dataFromNBP.rates[currencyTo].currency}{" "}{"("}{dataFromNBP.rates[currencyTo].code}{")"}
+                                    {ratesData.rates[currencyTo].currency}{" "}{"("}{ratesData.rates[currencyTo].code}{")"}
                                 </option>
                             ))}
                         </FormField>
@@ -88,11 +88,11 @@ const Form = ({ dataFromNBP }) => {
                 />
                 {!hideRates && <Fieldset>
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
-                    {Object.keys(dataFromNBP.rates).map(rate =>
+                    {Object.keys(ratesData.rates).map(rate =>
                         <label key={rate}>
-                            {dataFromNBP.rates[rate].currency}{" "}{"("}{dataFromNBP.rates[rate].code}{")"}
+                            {ratesData.rates[rate].currency}{" "}{"("}{ratesData.rates[rate].code}{")"}
                             <Input as="p">
-                                {dataFromNBP.rates[rate].mid}
+                                {ratesData.rates[rate].mid}
                             </Input>
                         </label>
                     )}

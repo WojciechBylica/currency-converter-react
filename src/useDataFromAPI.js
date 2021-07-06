@@ -2,36 +2,37 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 export const useDataFromAPI = () => {
-    const [dataFromNBP, setDataFromNBP] = useState({
+    const [ratesData, setRatesData] = useState({
         date: null,
         table: null,
         rates: null,
         status: "loading",
     })
     useEffect(() => {
-        const getDataFromNBP = async () => {
+        const getratesData = async () => {
             try {
-                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/a/');
-                const responseData = response.data[0].rates;
-                const responseDataWithPLN = [
+                const NBPAPI = 'https://api.nbp.pl/api/exchangerates/tables/a/';
+                const response = await axios.get(NBPAPI);
+                const rates = response.data[0].rates;
+                const ratesWithPLN = [
                     {
                         code: "PLN",
                         currency: "polski złoty",
                         mid: 1,
                     },
-                    ...responseData,
+                    ...rates,
                 ];
-                setDataFromNBP({
+                setRatesData({
                     date: response.data[0].effectiveDate,
                     table: response.data[0].no,
-                    rates: responseDataWithPLN,
+                    rates: ratesWithPLN,
                     status: "success",
                 });
             } catch (error) {
-                setDataFromNBP({ status: "error" });
+                setRatesData({ status: "error" });
             };
         };
-        setTimeout(getDataFromNBP, 2000);
+        setTimeout(getratesData, 2000);
     }, []);
-    return dataFromNBP;
+    return ratesData;
 };

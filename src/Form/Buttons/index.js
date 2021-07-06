@@ -8,7 +8,7 @@ const Buttons = ({ hideRates, toggleHideRates }) => {
                 onClick={toggleHideRates}
                 type="button"
             >
-                {`${hideRates === true ? "Pokaż" : "Ukryj"}`} Kursy
+                {`${hideRates ? "Pokaż" : "Ukryj"}`} Kursy
             </Button>
         </ButtonsWrapper>
     );
