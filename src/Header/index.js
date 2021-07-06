@@ -1,8 +1,8 @@
-import { H1 } from "./styled";
+import { StyledHeader } from "./styled";
 
 const Header = ({ title }) => (
     <header>
-        <H1>{title}</H1>
+        <StyledHeader>{title}</StyledHeader>
     </header>
 );
 export default Header;
