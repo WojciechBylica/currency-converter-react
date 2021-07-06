@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Main from "./Main";
 import Clock from "./Clock";
 import Form from "./Form";
 import Messenger from "./Messenger";
@@ -26,15 +25,15 @@ function App() {
           <Messenger
             body="Coś poszło nie tak... Sprawdź połączenie z internetem i spróbuj ponownie!"
             source={image}
-            alt="image"
+            alt="errorImage"
           />
         }
         {ratesData.status === "success" &&
           <>
-            <Main>
+            <main>
               <Clock />
               <Form ratesData={ratesData} />
-            </Main>
+            </main>
             <StyledFooter>Designed by Wojciech Bylica Arts</StyledFooter>
           </>
         }
