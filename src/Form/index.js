@@ -89,10 +89,9 @@ const Form = ({ dataFromNBP }) => {
                 {!hideRates && <Fieldset>
                     <legend><StyledSpan>Kursy walut</StyledSpan></legend>
                     {Object.keys(dataFromNBP.rates).map(rate =>
-                        <label>
+                        <label key={rate}>
                             {dataFromNBP.rates[rate].currency}{" "}{"("}{dataFromNBP.rates[rate].code}{")"}
-                            <Input as="p"
-                                key={dataFromNBP.rates[0].currency}>
+                            <Input as="p">
                                 {dataFromNBP.rates[rate].mid}
                             </Input>
                         </label>
