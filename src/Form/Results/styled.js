@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Result = styled.p`
     text-align: center;
-    width: 100%;
     border: ${({ theme }) => theme.elementBorder};
     border-radius: ${({ theme }) => theme.elementBorderRadius};
     padding: 12px;
