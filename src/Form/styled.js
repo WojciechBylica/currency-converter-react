@@ -30,9 +30,3 @@ export const FormField = styled.select`
 export const Input = styled(FormField)`
     background-color: ${({ theme }) => theme.backgroundColor.white};
 `;
-
-export const StyledSpan = styled.span`
-    border-radius: ${({ theme }) => theme.elementBorderRadius};
-    border: ${({ theme }) => theme.elementBorder};
-    background-color: ${({ theme }) => theme.backgroundColor.melrose};
-`;
