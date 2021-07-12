@@ -18,8 +18,6 @@ const Form = ({ ratesData }) => {
     } = useForm()
 
     const rates = ratesData.rates;
-    const ratesFrom = rates[currencyFrom];
-    const ratesTo = rates[currencyTo];
     const [hideRates, setHideRates] = useState(true);
     const toggleHideRates = () => {
         setHideRates(hideRates => !hideRates);
@@ -53,7 +51,7 @@ const Form = ({ ratesData }) => {
                                     key={currencyFrom}
                                     value={currencyFrom}
                                 >
-                                    {ratesFrom.currency}{" ("}{ratesFrom.code})
+                                    {rates[currencyFrom].currency}{" ("}{rates[currencyFrom].code})
                                 </option>
                             ))}
                         </FormField>
@@ -71,7 +69,7 @@ const Form = ({ ratesData }) => {
                                     key={currencyTo}
                                     value={currencyTo}
                                 >
-                                    {ratesTo.currency}{" ("}{ratesTo.code})
+                                    {rates[currencyTo].currency}{" ("}{rates[currencyTo].code})
                                 </option>
                             ))}
                         </FormField>
@@ -93,17 +91,24 @@ const Form = ({ ratesData }) => {
                     result={result}
                     amount={amount}
                 />
-                {!hideRates && <Fieldset>
-                    <legend><StyledSpan>Kursy walut</StyledSpan></legend>
-                    {Object.keys(rates).map(rate =>
-                        <label key={rate}>
-                            {rates[rate].currency}{" ("}{rates[rate].code})
-                            <Input as="p">
-                                {rates[rate].mid}
-                            </Input>
-                        </label>
-                    )}
-                </Fieldset>
+                {!hideRates && <table>
+                    <caption><StyledSpan>Kursy walut</StyledSpan></caption>
+                    <thead>
+                        <tr>waluta</tr>
+                        <td>symbol</td>
+                        <td>średni kurs</td>
+                    </thead>
+                    <tbody>
+                        {Object.keys(rates).map(rate =>
+                            <tr key={rate}>
+                                <th>{rates[rate].currency}</th>
+                                <td>{rates[rate].code}</td>
+                                <td> {rates[rate].mid}</td>
+                            </tr>
+                        )
+                        }
+                    </tbody>
+                </table>
                 }
             </StyledForm>
         </>
