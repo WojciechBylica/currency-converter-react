@@ -1,9 +1,11 @@
 import Results from "./Results";
 import Buttons from "./Buttons";
-import { StyledForm, Fieldset, FormField, Input, StyledSpan } from './styled';
+import { StyledForm, Fieldset, FormField, Input } from './styled';
+import Rates from "./Rates";
 import { useForm } from './useForm';
 import { Wrapper } from "../Clock/styled";
 import { useState } from "react";
+import { StyledHeader } from "../Header/styled";
 
 const Form = ({ ratesData }) => {
     const {
@@ -18,6 +20,8 @@ const Form = ({ ratesData }) => {
     } = useForm()
 
     const rates = ratesData.rates;
+    const ratesFrom = rates[currencyFrom];
+    const ratesTo = rates[currencyTo];
     const [hideRates, setHideRates] = useState(true);
     const toggleHideRates = () => {
         setHideRates(hideRates => !hideRates);
@@ -91,24 +95,11 @@ const Form = ({ ratesData }) => {
                     result={result}
                     amount={amount}
                 />
-                {!hideRates && <table>
-                    <caption><StyledSpan>Kursy walut</StyledSpan></caption>
-                    <thead>
-                        <tr>waluta</tr>
-                        <td>symbol</td>
-                        <td>średni kurs</td>
-                    </thead>
-                    <tbody>
-                        {Object.keys(rates).map(rate =>
-                            <tr key={rate}>
-                                <th>{rates[rate].currency}</th>
-                                <td>{rates[rate].code}</td>
-                                <td> {rates[rate].mid}</td>
-                            </tr>
-                        )
-                        }
-                    </tbody>
-                </table>
+                {!hideRates &&
+                    <>
+                        <StyledHeader as="h2">Kursy walut</StyledHeader>
+                        <Rates rates={rates} ratesData={ratesData} />
+                    </>
                 }
             </StyledForm>
         </>
