@@ -3,6 +3,7 @@ export const theme = {
         melrose: "hsl(230deg 98% 85%)",
         melroseHover: "hsl(230deg 98% 80%)",
         melroseActive: "hsl(230deg 98% 75%)",
+        moonRaker: "rgb(211 217 247)",
         white: "white",
         mystic: "rgb(231 239 239 / 75%)",
     },
