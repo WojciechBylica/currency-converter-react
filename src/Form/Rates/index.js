@@ -1,6 +1,6 @@
-import { TableWrapper, StyledTable ,StyledCaption, StyledRow, StyledCurrency } from "./styled";
+import { TableWrapper, StyledTable, StyledCaption, StyledRow, StyledCurrency } from "./styled";
 
-const Rates = ({rates, ratesData}) => (
+const Rates = ({ rates, ratesData }) => (
     <TableWrapper>
         <StyledTable>
             <StyledCaption>{ratesData.table}</StyledCaption>
@@ -11,6 +11,7 @@ const Rates = ({rates, ratesData}) => (
                     <th>średni kurs</th>
                 </StyledRow>
             </thead>
+
             <tbody>
                 {Object.keys(rates).slice(1).map(rate =>
                     <StyledRow key={rate}>
