@@ -26,6 +26,7 @@ const Form = ({ ratesData }) => {
     const toggleHideRates = () => {
         setHideRates(hideRates => !hideRates);
     };
+
     const calculateResult = (amount, valueFrom, valueTo) => +amount * +valueFrom / +valueTo;
 
     const onFormSubmit = (event) => {
@@ -60,6 +61,7 @@ const Form = ({ ratesData }) => {
                             ))}
                         </FormField>
                     </label >
+
                     <label>
                         Wybierz walutę docelową:
                         <FormField
@@ -78,6 +80,7 @@ const Form = ({ ratesData }) => {
                             ))}
                         </FormField>
                     </label >
+
                     <label>
                         Wpisz kwotę:
                         <Input as="input"
@@ -105,4 +108,5 @@ const Form = ({ ratesData }) => {
         </>
     )
 };
+
 export default Form;
