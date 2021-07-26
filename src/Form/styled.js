@@ -37,28 +37,31 @@ export const AnimatedDollar = styled.span`
     font-size: 100px;
     width: 100px;
     height: 100px;
-    color: #ffd7005e;
+    color: #e0e075;
+    text-shadow: 2px 2px 4px gold;
     background: #ffff0030;
-    border: 2px solid #ffd70070;
+    border: 2px solid #ffd700f7;
     border-radius: 100px;
-    box-shadow: 0 2px 1px #ffd7005e;
+    box-shadow: 0 2px 1px #ffd70000;
     animation-name: rotationSafari;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
+    user-select: none;
+
+    &:hover {
+        animation-play-state: paused;
+    }
 
     @keyframes rotationSafari {
         from {
-            color: #ffd70050;
             transform: rotate3d(0, 1, 0, 0deg);
         }
         50% {
-            color: #ffff0050;
             transform: rotate3d(0, 1, 0, 180deg);
         }
         100% {
-            color: #ffd70050;
             transform: rotate3d(0, 1, 0, 360deg);
         }
     }
