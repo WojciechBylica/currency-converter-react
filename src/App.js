@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Clock from "./Clock";
 import Form from "./Form";
-import Messenger from "./Messenger";
+import Loader from "./Loader";
 import { useDataFromAPI } from "./useDataFromAPI";
 import imageLoader from "./images/imageLoader.gif";
 import image from "./images/image.png";
@@ -15,14 +15,14 @@ function App() {
       <StyledDiv>
         <Header title="Przelicznik walut" />
         {ratesData.status === "loading" &&
-          <Messenger
+          <Loader
             body="Ładuję kursy walut z Narodowego Banku Polskiego..."
             source={imageLoader}
             alt="imageLoader"
           />
         }
         {ratesData.status === "error" &&
-          <Messenger
+          <Loader
             body="Coś poszło nie tak... Sprawdź połączenie z internetem i spróbuj ponownie!"
             source={image}
             alt="errorImage"
