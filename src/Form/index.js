@@ -1,6 +1,6 @@
 import Results from "./Results";
 import Buttons from "./Buttons";
-import { StyledForm, Fieldset, FormField, Input } from './styled';
+import { StyledForm, Fieldset, FormField, Input, AnimatedDollar } from './styled';
 import Rates from "./Rates";
 import { useForm } from './useForm';
 import { Wrapper } from "../Clock/styled";
@@ -17,7 +17,7 @@ const Form = ({ ratesData }) => {
         setAmount,
         setResult,
         result,
-    } = useForm()
+    } = useForm();
 
     const rates = ratesData.rates;
     const ratesFrom = rates[currencyFrom];
@@ -34,9 +34,17 @@ const Form = ({ ratesData }) => {
         const valueFrom = +ratesFrom.mid;
         const valueTo = +ratesTo.mid;
         const result = calculateResult(amount, valueFrom, valueTo);
-        setResult({ amount: amount, currencyFrom: ratesFrom.code, value: result, currencyTo: ratesTo.code });
+
+        setResult({
+            amount: amount,
+            currencyFrom: ratesFrom.code,
+            value: result,
+            currencyTo: ratesTo.code
+        });
+
         setAmount("");
     };
+
     return (
         <>
             <Wrapper> Aktualizacja kursów: {ratesData.date}</Wrapper>
@@ -98,15 +106,16 @@ const Form = ({ ratesData }) => {
                     result={result}
                     amount={amount}
                 />
-                {!hideRates &&
-                    <>
+                {hideRates
+                    ? <AnimatedDollar>$</AnimatedDollar>
+                    : <>
                         <StyledHeader as="h2">Kursy walut</StyledHeader>
                         <Rates rates={rates} ratesData={ratesData} />
                     </>
                 }
             </StyledForm>
         </>
-    )
+    );
 };
 
 export default Form;
