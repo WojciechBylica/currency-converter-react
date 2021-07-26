@@ -14,6 +14,7 @@ export const Button = styled.button`
     padding: 12px;
     font-size: 16px;
     box-shadow: 2px 2px 5px #1d1b1b;
+    user-select: none;
 
     &:hover {
         background-color: ${({ theme }) => theme.backgroundColor.melroseHover};
