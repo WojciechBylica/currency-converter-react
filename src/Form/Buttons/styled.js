@@ -20,5 +20,6 @@ export const Button = styled.button`
 }
     &:active {
         background-color: ${({ theme }) => theme.backgroundColor.melroseActive};
+        box-shadow: none;
 }
 `;
