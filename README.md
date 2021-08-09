@@ -1,5 +1,5 @@
 # currency-converter-react
-![logo](/public/currencyConventerLogo.png)
+![logo](/public/currencyConverterLogo.png)
  - written by: Wojciech Bylica
  - date: 03.07.2021
 
@@ -9,14 +9,14 @@ https://wojciechbylica.github.io/currency-converter-react/
 
 ### Description
 
-In react-currency-conventer You can:
-- count currency convertions using actual rates uploaded from European Central Bank
-- convert in all dirrections between currencies
-- see actual date presented in format dedicated to Your country 
+In react-currency-converter You can:
+- count currency exchanges using actual rates uploaded from European Central Bank
+- convert in all directions between currencies
+- see actual date presented in format dedicated to Your country
 - see date of uploading rates
 ### Technology used to build the page:
 - html
-- css with BEM 
+- css with BEM
 - Flex
 - EC6+
 - Immutability

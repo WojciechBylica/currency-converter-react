@@ -1,8 +1,8 @@
 {
-  "name": "react-currecy-conventer",
+  "name": "react-currency-converter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wojciechbylica.github.io/currency-conventer-react/",
+  "homepage": "https://wojciechbylica.github.io/currency-converter-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
