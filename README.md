@@ -5,7 +5,7 @@
 
 ## Demo
 
-https://wojciechbylica.github.io/currency-conventer-react/
+https://wojciechbylica.github.io/currency-converter-react/
 
 ### Description
 
